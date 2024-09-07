@@ -12,5 +12,5 @@ cut -d: -f1 /etc/passwd
 Вывести данные /etc/protocols в отформатированном и отсортированном порядке для 5 наибольших портов, как показано в примере ниже:
 Код:
 ```
-cat /etc/protocols | sort -n -r | awk '{print $2, $1}' | head -5
+cat /etc/protocols | sort -k2,2 -n -r | awk '{print $2, $1}' | head -5
 ```
