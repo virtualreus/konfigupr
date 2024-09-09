@@ -74,7 +74,7 @@ sudo cp $1 /usr/local/bin
 
 ## Задание 6
 
-'''py
+```py
 #!/usr/bin/env python3
 import os
 import sys
