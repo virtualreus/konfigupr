@@ -105,3 +105,66 @@ if __name__ == "__main__":
 ```
 
 ![Uploading image.png…]()
+
+
+## Задание 7
+
+```py
+#!/usr/bin/env python3
+import os
+import hashlib
+
+import hashlib
+import os
+
+
+def compute_file_hash(file_path):
+    sha256_hasher = hashlib.sha256()
+    with open(file_path, 'rb') as file:
+        buffer = file.read(65536)  # Размер буфера
+        while len(buffer) > 0:
+            sha256_hasher.update(buffer)
+            buffer = file.read(65536)
+    return sha256_hasher.hexdigest()
+
+
+def search_duplicate_files(directory):
+    hash_map = {}
+    duplicate_files = []
+
+    for root_dir, subdirs, files in os.walk(directory):
+        for file_name in files:
+            full_path = os.path.join(root_dir, file_name)
+            hash_value = compute_file_hash(full_path)
+            if hash_value in hash_map:
+                hash_map[hash_value].append(full_path)
+            else:
+                hash_map[hash_value] = [full_path]
+
+    for file_paths in hash_map.values():
+        if len(file_paths) > 1:
+            duplicate_files.append(file_paths)
+
+    return duplicate_files
+
+
+if __name__ == "__main__":
+    import sys
+    if len(sys.argv) > 1:
+        directory = sys.argv[1]
+        found_duplicates = search_duplicate_files(directory)
+        if found_duplicates:
+            print("Duplicates:")
+            for duplicate_group in found_duplicates:
+                for filepath in duplicate_group:
+                    print(filepath)
+    else:
+        print("Неверный ввод")
+```
+
+```
+./script7.py "./"
+```
+
+![Uploading image.png…]()
+
