@@ -71,3 +71,37 @@ grep -E -o '\b[a-zA-Z_][a-zA-Z0-9_]*\b' hello.c | sort | uniq
 chmod +x $1
 sudo cp $1 /usr/local/bin
 ```
+
+## Задание 6
+
+'''py
+#!/usr/bin/env python3
+import os
+import sys
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Неверный ввод")
+    else:
+        directory = sys.argv[1]
+        extensions = {
+            '.c': '//',
+            '.js': '//',
+            '.py': '#'
+        }
+        for finded in os.scandir(directory):
+            if finded.is_file():
+                file = os.path.splitext(finded.name)[-1]
+                if file in extensions:
+                    with open(finded.path, 'r') as f:
+                        first_line = f.readline().strip()
+                        if first_line.startswith(extensions[file]):
+                            print(f"{finded.name} - есть")
+
+```
+
+```
+./script6.py "./"
+```
+
+![Uploading image.png…]()
