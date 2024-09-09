@@ -63,3 +63,11 @@ grep -E -o '\b[a-zA-Z_][a-zA-Z0-9_]*\b' hello.c | sort | uniq
 ```
 ![Uploading image.png…]()
 
+
+## Задание 5
+
+Файл reg
+```
+chmod +x $1
+sudo cp $1 /usr/local/bin
+```
