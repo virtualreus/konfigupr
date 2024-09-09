@@ -6,7 +6,7 @@
 ```
 cut -d: -f1 /etc/passwd
 ```
-![Uploading image.png…]()
+<img width="969" alt="image" src="https://github.com/user-attachments/assets/86b2dc0e-eeae-4443-be90-337f0297540c">
 
 ## Задание 2
 
@@ -16,6 +16,7 @@ cut -d: -f1 /etc/passwd
 ```
 cat /etc/protocols | sort -k2,2 -n -r | awk '{print $2, $1}' | head -5
 ```
+<img width="670" alt="image" src="https://github.com/user-attachments/assets/59e7eb79-c960-46c7-b0e9-ea7c0c628dd5">
 
 ## Задание 3
 
@@ -50,6 +51,7 @@ if __name__ == "__main__":
         print('| ' + input_text + ' |')
         print(line)
 ```
+<img width="995" alt="image" src="https://github.com/user-attachments/assets/078cdaad-4218-4b6b-89ca-4acaa40537a6">
 
 ## Задание 4
 
@@ -59,3 +61,5 @@ if __name__ == "__main__":
 ```
 grep -E -o '\b[a-zA-Z_][a-zA-Z0-9_]*\b' hello.c | sort | uniq
 ```
+![Uploading image.png…]()
+
