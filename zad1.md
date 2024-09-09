@@ -6,6 +6,7 @@
 ```
 cut -d: -f1 /etc/passwd
 ```
+![Uploading image.png…]()
 
 ## Задание 2
 
