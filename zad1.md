@@ -190,4 +190,12 @@ if __name__ == "__main__":
 ```
 
 Ввод и вывод
-![Uploading image.png…]()
+```
+./script8.py "./" ".py"
+ls
+```
+```
+Создан: arr_py.tar
+
+arr_py.tar  bench.py    hello.c     hello.js    readme.txt  script8.py
+```
