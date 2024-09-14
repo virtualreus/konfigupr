@@ -61,7 +61,7 @@ if __name__ == "__main__":
 ```
 grep -E -o '\b[a-zA-Z_][a-zA-Z0-9_]*\b' hello.c | sort | uniq
 ```
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/0ddfa722-bde1-4155-a855-1478fa1258ce)
 
 
 ## Задание 5
@@ -168,3 +168,26 @@ if __name__ == "__main__":
 
 ![Uploading image.png…]()
 
+## Задание 8
+
+python script
+
+```py
+#!/usr/bin/env python3
+import os
+import tarfile
+import sys
+
+if __name__ == "__main__":
+    dir, ext = sys.argv[1], sys.argv[2]
+    tararchive = f"archive_{ext.replace('.', '')}.tar"
+
+        with tarfile.open(tararchive, "w") as tar:
+            for file in os.listdir(dir):
+                if file.endswith(ext):
+                    tar.add(os.path.join(dir, file))
+        print(f"Архив {tararchive} создан.")
+```
+
+Ввод и вывод
+![Uploading image.png…]()
