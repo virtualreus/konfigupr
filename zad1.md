@@ -225,3 +225,38 @@ if __name__ == "__main__":
 ```
 Результат: res.txt
 ```
+
+## Задание 8
+
+python script
+```py
+#!/usr/bin/env python3
+import os
+import sys
+
+if __name__ == "__main__":
+    path = sys.argv[1]
+    all_files = os.listdir(path)
+    empty_files_list = []
+
+    for item in all_files:
+        full_item_path = os.path.join(path, item)
+        if os.path.isfile(full_item_path) and os.path.getsize(full_item_path) == 0:
+            empty_files_list.append(item)
+
+    if empty_files_list:
+        print("Найдены пустые файлы:")
+        for empty_file in empty_files_list:
+            print(empty_file)
+```
+Ввод и вывод:
+```
+./script8.py "./"
+```
+
+```
+ПУстые файлы:
+test.css
+test.cpp
+```
+
