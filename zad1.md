@@ -201,7 +201,7 @@ arr_py.tar  bench.py    hello.c     hello.js    readme.txt  script8.py
 ```
 
 
-## Задание 8
+## Задание 9
 
 python script
 ```py
@@ -226,7 +226,7 @@ if __name__ == "__main__":
 Результат: res.txt
 ```
 
-## Задание 8
+## Задание 10
 
 python script
 ```py
