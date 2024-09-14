@@ -199,3 +199,29 @@ ls
 
 arr_py.tar  bench.py    hello.c     hello.js    readme.txt  script8.py
 ```
+
+
+## Задание 8
+
+python script
+```py
+#!/usr/bin/env python3
+import sys
+
+if __name__ == "__main__":
+    input, output = sys.argv[1], sys.argv[2]
+    with open(input) as w:
+        isxod = w.read()
+        red = isxod.replace("    ", "\t")
+        with open(res, "w") as w:
+            w.write(red)
+        print(f"результат: {output}")
+```
+
+Ввод и вывод
+```
+./script8.py "text.txt" "res.txt"
+```
+```
+Результат: res.txt
+```
