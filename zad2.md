@@ -127,7 +127,7 @@ pip3 show matplotlib
 Вывод тот же что и выше
 ```
 
-## 2 Задание
+## Задание 2
 
 Ввод 
 ```
@@ -136,5 +136,17 @@ npm view express
 
 ![image](https://github.com/user-attachments/assets/e5d9cb95-ec6f-4575-9c93-e3c853f81b6e)
 
+```
+git clone https://github.com/expressjs/express.git
+cd express
+npm install
+npm link
+```
 
+```
+Вывод прежний
+```
+
+
+## Задание 3 
 
