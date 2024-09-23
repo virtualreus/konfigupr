@@ -169,3 +169,40 @@ digraph mpl {
 ```
 dot -Tpng matplotlib.dot -o result.png
 ```
+
+```
+ digraph ExpressDeps {
+    node [shape=box];
+
+    "express" -> "accepts";
+    "express" -> "array-flatten";
+    "express" -> "body-parser";
+    "express" -> "content-disposition";
+    "express" -> "content-type";
+    "express" -> "cookie";
+    "express" -> "cookie-signature";
+    "express" -> "debug";
+    "express" -> "depd";
+    "express" -> "encodeurl";
+    "express" -> "escape-html";
+    "express" -> "etag";
+    "express" -> "finalhandler";
+    "express" -> "fresh";
+    "express" -> "http-errors";
+    "express" -> "merge-descriptors";
+    "express" -> "methods";
+    "express" -> "on-finished";
+    "express" -> "parseurl";
+    "express" -> "path-to-regexp";
+    "express" -> "proxy-addr";
+    "express" -> "qs";
+    "express" -> "range-parser";
+    "express" -> "safe-buffer";
+    "express" -> "send";
+    "express" -> "serve-static";
+    "express" -> "setprototypeof";
+    "express" -> "statuses";
+    "express" -> "type-is";
+    "express" -> "utils-merge";
+    "express" -> "vary";
+}
