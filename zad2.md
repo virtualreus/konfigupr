@@ -209,3 +209,45 @@ dot -Tpng matplotlib.dot -o result.png
 ```
 dot -Tpng exp.dot -o res2.png
 ```
+
+
+```
+## Задание 4
+
+```
+int: sum = 3;
+var 0..9: a; 
+var 0..9: b; 
+var 0..9: c; 
+
+include "alldifferent.mzn"; 
+
+constraint a + b + c = sum;
+constraint all_different([a, b, c]); 
+
+solve satisfy; 
+```
+Вывод:
+```
+
+￼
+Running untitled_model.mzn
+80msec
+
+a = 2;
+b = 1;
+c = 0;
+----------
+Finished in 80msec.
+
+￼
+Running untitled_model.mzn
+67msec
+
+a = 2;
+b = 1;
+c = 0;
+----------
+Finished in 67msec.
+```
+
