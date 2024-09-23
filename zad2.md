@@ -150,3 +150,22 @@ npm link
 
 ## Задание 3 
 
+Digraph код
+```
+digraph mpl {
+    node [shape=box];
+
+    "matplotlib" -> "contourpy";
+    "matplotlib" -> "cycler";
+    "matplotlib" -> "fonttools";
+    "matplotlib" -> "kiwisolver";
+    "matplotlib" -> "numpy";
+    "matplotlib" -> "packaging";
+    "matplotlib" -> "pillow";
+    "matplotlib" -> "pyparsing";
+    "matplotlib" -> "python-dateutil";
+}
+```
+```
+dot -Tpng matplotlib.dot -o result.png
+```
