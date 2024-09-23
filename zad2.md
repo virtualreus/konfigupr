@@ -251,3 +251,47 @@ c = 0;
 Finished in 67msec.
 ```
 
+## Задание 5
+
+```
+int: mC = 6;
+int: dC = 5;
+int: iC = 2;
+var 1..mC: m;
+var 1..dC: d;
+var 1..iC: i;
+
+array[1..mC] of tuple(int, int, int): mV = 
+  [(1,0,0), (1,1,0), (1,2,0), (1,3,0), (1,4,0), (1,5,0)];
+array[1..dC] of tuple(int, int, int): dV = 
+  [(1,8,0), (2,0,0), (2,1,0), (2,2,0), (2,3,0)];
+array[1..iC] of tuple(int, int, int): iV = 
+  [(1,0,0), (2,0,0)];
+
+constraint (mV[m] == (1,0,0) \/ mV[m] == (1, 5, 0) /\ iV[i] == (1, 0, 0));
+constraint (mV[m].2 >= 1 /\ mV[m].2 <= 5) -> (dV[d] == (2, 3, 0) \/ dV[d] == (2, 0, 0));
+constraint mV[m] == (1, 0, 0) -> dV[d] == (1, 8, 0);
+constraint (dV[d].2 >= 0 /\ dV[d].2 <= 3) -> iV[i] == (2, 0, 0);
+
+solve satisfy;
+
+output [
+  "Menu version: ", show(mV[m]), "\n",
+  "Dropdown version: ", show(dV[d]), "\n",
+  "Icon version: ", show(iV[i]), "\n"
+];
+```
+
+Вывод:
+```
+
+￼
+Running untitled_model.mzn
+52msec
+
+Menu version: (1, 0, 0)
+Dropdown version: (1, 8, 0)
+Icon version: (1, 0, 0)
+----------
+Finished in 52msec.
+```
