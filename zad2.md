@@ -280,6 +280,7 @@ output [
   "Dropdown version: ", show(dV[d]), "\n",
   "Icon version: ", show(iV[i]), "\n"
 ];
+
 ```
 
 Вывод:
@@ -294,4 +295,74 @@ Dropdown version: (1, 8, 0)
 Icon version: (1, 0, 0)
 ----------
 Finished in 52msec.
+```
+
+## Задание 6
+
+```
+int: fC = 2;
+int: lC = 1;
+int: rC = 1;
+int: shC = 2;
+int: tC = 2;
+
+var 1..fC: foo;
+var 1..lC: left;
+var 1..rC: right;
+var 1..shC: shared;
+var 1..tC: target;
+
+array[1..fC] of tuple(int, int, int): fV = 
+[(1,0,0), (1,1,0)];
+array[1..lC] of tuple(int, int, int): lV = 
+[(1,0,0)];
+array[1..rC] of tuple(int, int, int): rV = 
+[(1,0,0)];
+array[1..shC] of tuple(int, int, int): shV = 
+[(1,0,0), (2,0,0)];
+array[1..tC] of tuple(int, int, int): tV = 
+[(1,0,0), (2,0,0)];
+
+
+constraint (fV[foo].1 == 1 /\ fV[foo].2 >= 0) 
+/\ (tV[target].1 == 2 /\ tV[target].2 >= 0); 
+constraint fV[foo] == (1, 1, 0) -> 
+(lV[left].1 == 1 /\ lV[left].2 >= 0) 
+/\ (rV[right].1 == 1 /\ rV[right].2 >= 0); 
+constraint lV[left] == (1, 0, 0) ->
+(shV[shared].1 >= 1);
+constraint rV[right] == (1, 0, 0) ->
+(shV[shared].1 < 2);
+constraint shV[shared] == (1, 0, 0) ->
+(tV[target].1 == 1 /\ tV[target].2 >= 0);
+
+tuple(int, int, int): rootV = (1,0,0);
+
+solve satisfy;
+
+output [
+"Root version: ", show(rootV), "\n",
+"Foo version: ", show(fV[foo]), "\n",
+"Left version: ", show(lV[left]), "\n",
+"Right version: ", show(rV[right]), "\n",
+"Shared version: ", show(shV[shared]), "\n",
+"Target version: ", show(tV[target]), "\n"
+];
+```
+Вывод:
+
+```
+
+￼
+Running untitled_model.mzn
+58msec
+
+Root version: (1, 0, 0)
+Foo version: (1, 0, 0)
+Left version: (1, 0, 0)
+Right version: (1, 0, 0)
+Shared version: (1, 0, 0)
+Target version: (2, 0, 0)
+----------
+Finished in 58msec.
 ```
