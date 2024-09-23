@@ -206,3 +206,6 @@ dot -Tpng matplotlib.dot -o result.png
     "express" -> "utils-merge";
     "express" -> "vary";
 }
+```
+dot -Tpng exp.dot -o res2.png
+```
