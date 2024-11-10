@@ -15,7 +15,45 @@ $\int_{x}^{\infty}{\frac{dt}{t(t^{2}-1\log{t}}}=\int_{x}^{\infty}{\frac{1}{t\log
 
 Используйте [онлайн-редактор](https://plantuml-editor.kkeisuke.com/).
 
-![](images/plantuml.png)
+```
+@startuml
+
+actor "Тищенко Никита Сергеевич" as student
+database Piazza as piazza
+actor "Преподаватель" as teacher
+
+teacher -> piazza : Публикация задачи
+activate piazza
+piazza --> teacher : Задача опубликована
+deactivate piazza
+...
+student -> piazza : Поиск задач
+activate piazza
+piazza --> student : Получение задачи
+deactivate piazza
+...
+student -> piazza : Публикация решения
+activate piazza
+piazza --> student : Решение опубликовано
+deactivate piazza
+...
+teacher -> piazza : Поиск решений
+activate piazza
+piazza --> teacher : Решение найдено
+teacher -> piazza : Публикация оценки
+piazza --> teacher : Оценка опубликована
+deactivate piazza
+...
+student -> piazza : Проверка оценки
+activate piazza
+piazza --> student : Оценка получена
+deactivate piazza
+
+@enduml
+```
+
+![image](https://github.com/user-attachments/assets/fcce64f8-75b7-41f1-a7a4-2bd7f634c23f)
+
 
 ## Задача 3
 
