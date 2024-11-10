@@ -192,6 +192,7 @@ BNF = '''
 E = 0 | 1 E | 1
 '''
 ```
+![image](https://github.com/user-attachments/assets/e157e763-0b80-4eb7-8214-1b1e63803d1d)
 
 ## Задача 4
 
@@ -213,6 +214,9 @@ E = () | {} | ( E ) | { E } | E E
 '''
 ```
 
+![image](https://github.com/user-attachments/assets/8daca241-5bf3-4011-adf5-7003fd6eb078)
+
+
 ## Задача 5
 
 Язык выражений алгебры логики.
@@ -232,3 +236,6 @@ BNF = '''
 E = E AND E | E OR E | ~ E | ( E ) | x | y
 '''
 ```
+
+![image](https://github.com/user-attachments/assets/cd6dc7db-3b63-4dda-af16-74e2e7173865)
+
